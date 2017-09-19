@@ -77,9 +77,9 @@
   cursor: pointer;
 }
 .v-select.open .dropdown-toggle {
-  border-bottom-color: transparent;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  /*border-bottom-color: transparent;*/
+  /*border-bottom-right-radius: 0;*/
+  /*border-bottom-left-radius: 0;*/
 }
 /* Dropdown Menu */
 .v-select .dropdown-menu {
@@ -306,7 +306,7 @@
     </div>
 
     <transition :name="transition">
-      <ul ref="dropdownMenu" v-if="dropdownOpen" class="dropdown-menu" :style="{ 'max-height': maxHeight }">
+      <ul ref="dropdownMenu" v-if="dropdownOpen && filteredOptions.length" class="dropdown-menu" :style="{ 'max-height': maxHeight }">
         <li v-for="(option, index) in filteredOptions" v-bind:key="index" :class="{ active: isOptionSelected(option), highlight: index === typeAheadPointer }" @mouseover="typeAheadPointer = index">
           <a @mousedown.prevent="select(option)">
             {{ getOptionLabel(option) }}
