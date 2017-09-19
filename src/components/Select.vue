@@ -313,7 +313,7 @@
           </a>
         </li>
         <li v-if="!filteredOptions.length" class="no-options">
-          <slot name="no-options">Sorry, no matching options.</slot>
+          <slot name="no-options" :html="emptyMsg"></slot>
         </li>
       </ul>
     </transition>
@@ -520,6 +520,16 @@
        */
       inputId: {
         type: String
+      },
+
+      /**
+       * Sets the id of the input element.
+       * @type {String}
+       * @default {null}
+       */
+      emptyMsg: {
+        type: String
+        default: 'Sorry, no matching options.'
       }
     },
 
