@@ -313,7 +313,7 @@
           </a>
         </li>
         <li v-if="!filteredOptions.length" class="no-options">
-          <slot name="no-options" :html="emptyMsg"></slot>
+          <slot name="no-options">New option</slot>
         </li>
       </ul>
     </transition>
@@ -523,9 +523,8 @@
       },
 
       /**
-       * Sets the id of the input element.
+       * Sets the empty message of the list.
        * @type {String}
-       * @default {null}
        */
       emptyMsg: {
         type: String,
