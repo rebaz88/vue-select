@@ -529,7 +529,7 @@
        */
       emptyMsg: {
         type: String
-        default: 'Sorry, no matching options.'
+        default: 'Sorry, no matching options. no record found'
       }
     },
 
