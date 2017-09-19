@@ -745,7 +745,7 @@
        * @return {void}
        */
       onSearchFocus() {
-        if (this.filteredOptions.length) {
+        if(this.search != '' || this.options.length > 0) {
           this.open = true
         }
         this.$emit('search:focus')
