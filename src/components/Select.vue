@@ -313,7 +313,7 @@
           </a>
         </li>
         <li v-if="!filteredOptions.length" class="no-options">
-          <slot name="no-options" :html="emptyMsg"></slot>
+          <slot name="no-options" :html="emptyMsg">There is no options</slot>
         </li>
       </ul>
     </transition>
