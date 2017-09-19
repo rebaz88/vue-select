@@ -313,7 +313,7 @@
           </a>
         </li>
         <li v-if="!filteredOptions.length" class="no-options">
-          <slot name="no-options" :html="emptyMsg">There is no options</slot>
+          <slot name="no-options" :html="emptyMsg"></slot>
         </li>
       </ul>
     </transition>
@@ -528,8 +528,8 @@
        * @default {null}
        */
       emptyMsg: {
-        type: String
-        default: 'Sorry, no matching options. no record found'
+        type: String,
+        default: 'Sorry, no matching options.'
       }
     },
 
