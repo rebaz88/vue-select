@@ -1,7 +1,7 @@
 <style>
 .v-select {
   position: relative;
-  font-family: sans-serif;
+  font-family: initial;
 }
 .v-select,
 .v-select * {
@@ -56,8 +56,8 @@
   flex-wrap: wrap;
   padding: 0;
   background: none;
-  border: 1px solid rgba(60, 60, 60, .26);
-  border-radius: 4px;
+  border: 2px solid #ececec;
+  border-radius: 0px;
   white-space: normal;
   transition: border-radius .25s;
 }
@@ -89,7 +89,7 @@
   right: 0;
   z-index: 1000;
   min-width: initial;
-  padding: 5px 0;
+  padding: 0px 0;
   margin: 0;
   width: 100%;
   overflow-y: scroll;
@@ -112,8 +112,8 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   height: auto;
-  margin: 2px 1px 2px 3px;
-  padding: 0px 20px 0px 5px;
+  margin: 4px 1px 2px 3px;
+  padding: 0 8px 0 5px;
   float: right;
 }
 .v-select.single .selected-tag {
@@ -173,7 +173,7 @@
   border: none;
   outline: none;
   margin: 0;
-  padding: 0 20px 0 10px;
+  padding: 0 12px 0 10px;
   width: 100%;
   background: none;
   position: relative;
@@ -312,7 +312,7 @@
             {{ getOptionLabel(option) }}
           </a>
         </li>
-        <li v-if="!filteredOptions.length" class="no-options">
+        <li v-if="!filteredOptions.length && !search.length" class="no-options" style="display:none;">
           <slot name="no-options">{{emptyMessage}}</slot>
         </li>
       </ul>
@@ -745,9 +745,7 @@
        * @return {void}
        */
       onSearchFocus() {
-        if(this.search != '' || this.options.length > 0) {
-          this.open = true
-        }
+        this.open = true
         this.$emit('search:focus')
       },
 
