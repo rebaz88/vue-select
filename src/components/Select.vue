@@ -313,7 +313,7 @@
           </a>
         </li>
         <li v-if="!filteredOptions.length" class="no-options">
-          <slot name="no-options">New option</slot>
+          <slot name="no-options">{{emptyMessage}}</slot>
         </li>
       </ul>
     </transition>
@@ -526,7 +526,7 @@
        * Sets the empty message of the list.
        * @type {String}
        */
-      emptyMsg: {
+      emptyMessage: {
         type: String,
         default: 'Sorry, no matching options.'
       }
