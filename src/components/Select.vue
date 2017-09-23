@@ -290,12 +290,13 @@
               @keyup.enter.prevent="typeAheadSelect"
               @blur="onSearchBlur"
               @focus="onSearchFocus"
-              @mouseleave="onMouseLeave"
               type="search"
               class="form-control"
               :placeholder="searchPlaceholder"
               :readonly="!searchable"
               :id="inputid"
+              :name="inputname"
+              v-validate="dropdownvalidation ? dropdownvalidation : ''"
               aria-label="Search for option"
       >
 
@@ -521,7 +522,24 @@
        * @type {String}
        * @default {null}
        */
+      inputname: {
+        type: String
+      },
+      /**
+       * Sets the id of the input element.
+       * @type {String}
+       * @default {null}
+       */
       inputid: {
+        type: String
+      },
+
+      /**
+       * Sets the id of the input element.
+       * @type {String}
+       * @default {null}
+       */
+      dropdownvalidation: {
         type: String
       },
 
@@ -611,6 +629,7 @@
 			this.mutableLoading = this.loading
 
       this.$on('option:created', this.maybePushTag)
+
     },
 
     methods: {
@@ -750,17 +769,6 @@
       onSearchFocus() {
         this.open = true
         this.$emit('search:focus')
-      },
-
-      /**
-       * Set the input as touched
-       * @method onMouseLeave
-       * @return {void}     [description]
-       */
-      onMouseLeave() {
-        //for validation
-        if(this.inputid)
-          this.fields[this.inputid].touched = true;
       },
 
       /**
@@ -915,6 +923,7 @@
         return []
       }
     },
+
 
   }
 </script>
