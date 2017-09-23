@@ -326,6 +326,8 @@
   import ajax from '../mixins/ajax'
 
   export default {
+    inject: ['$validator'],
+
     mixins: [pointerScroll, typeAheadPointer, ajax],
 
     props: {
@@ -747,6 +749,10 @@
       onSearchFocus() {
         this.open = true
         this.$emit('search:focus')
+
+        //for validation
+        if(this.inputId)
+          this.fields[inputId].touched = true;
       },
 
       /**

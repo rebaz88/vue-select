@@ -3,10 +3,13 @@ import vSelect from './components/Select.vue'
 import countries from 'docs/data/advanced.js'
 import debounce from 'lodash/debounce'
 import resource from 'vue-resource'
+import VeeValidate from 'vee-validate';
 
 Vue.use(resource)
 
 Vue.component('v-select', vSelect)
+
+Vue.use(VeeValidate);
 
 Vue.config.devtools = true
 
