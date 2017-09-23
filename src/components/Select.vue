@@ -294,7 +294,7 @@
               class="form-control"
               :placeholder="searchPlaceholder"
               :readonly="!searchable"
-              :id="inputId"
+              :id="inputid"
               aria-label="Search for option"
       >
 
@@ -520,7 +520,7 @@
        * @type {String}
        * @default {null}
        */
-      inputId: {
+      inputid: {
         type: String
       },
 
@@ -751,8 +751,8 @@
         this.$emit('search:focus')
 
         //for validation
-        if(this.inputId)
-          this.fields[inputId].touched = true;
+        if(this.inputid)
+          this.fields[this.inputid].touched = true;
       },
 
       /**
