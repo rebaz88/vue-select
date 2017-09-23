@@ -296,7 +296,7 @@
               :readonly="!searchable"
               :id="inputid"
               :name="inputname"
-              v-validate="dropdownvalidation ? dropdownvalidation : ''"
+              v-validate:mutableValue="dropdownvalidation ? dropdownvalidation : ''"
               aria-label="Search for option"
       >
 

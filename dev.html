@@ -31,7 +31,7 @@
 
 <body dir="rtl">
     <div id="app">
-        <v-select placeholder="default" :options="options" inputid="country" inputname="country"></v-select>
+        <v-select placeholder="default" :options="options" inputid="country" inputname="country" :dropdownvalidation="'required'"></v-select>
         <v-select placeholder="multiple" multiple :options="options"></v-select>
         <v-select placeholder="multiple, taggable" multiple taggable :options="options" no-drop></v-select>
         <v-select placeholder="multiple, taggable, push-tags" multiple push-tags taggable :options="[{label: 'Foo', value: 'foo'}]"></v-select>
