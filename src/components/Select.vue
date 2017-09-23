@@ -290,6 +290,7 @@
               @keyup.enter.prevent="typeAheadSelect"
               @blur="onSearchBlur"
               @focus="onSearchFocus"
+              @mouseleave="onMouseLeave"
               type="search"
               class="form-control"
               :placeholder="searchPlaceholder"
@@ -749,7 +750,14 @@
       onSearchFocus() {
         this.open = true
         this.$emit('search:focus')
+      },
 
+      /**
+       * Set the input as touched
+       * @method onMouseLeave
+       * @return {void}     [description]
+       */
+      onMouseLeave() {
         //for validation
         if(this.inputid)
           this.fields[this.inputid].touched = true;
